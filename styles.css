@@ -2,6 +2,8 @@
   --primary-color: #593825;
   --neutral-color: #fff;
   --secondary-color: #bf7e45;
+  --brown: #a6592d;
+  --white-brown-color: #f2f1df;
 }
 
 * {
@@ -151,6 +153,86 @@ main {
   fill: var(--neutral-color);
 }
 
+#habilidades {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.habilidades-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.habilidades-card {
+  background: var(--neutral-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  border: 1px solid var(--white-brown-color);
+}
+
+.habilidades-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.badge {
+  background-color: var(--secondary-color);
+  color: var(--neutral-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  background-color: var(--brown);
+}
+
+.badge img {
+  width: 24px;
+  height: 24px;
+}
+
 @media (max-width: 960px) {
   #sobre {
     flex-direction: column-reverse;
@@ -217,5 +299,13 @@ main {
   .sobre-image img {
     width: 220px;
     height: 220px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .habilidades-card {
+    padding: 1.5rem;
   }
 }
