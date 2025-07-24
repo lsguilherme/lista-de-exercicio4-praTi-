@@ -1,5 +1,115 @@
+:root {
+  --primary-color: #593825;
+  --neutral-color: #fff;
+  --secondary-color: #bf7e45;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--neutral-color);
+  color: var(--primary-color);
+}
+
+.header-container {
+  background-color: var(--neutral-color);
+  height: 70px;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.header-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.header-nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .header-nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--neutral-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    gap: 0;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-nav-links.active {
+    left: 0;
+  }
+
+  .header-nav-links li {
+    padding: 1rem 0;
+  }
 }
